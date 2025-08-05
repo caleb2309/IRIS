@@ -1,0 +1,64 @@
+### **CMD CHEATSHEET: `START` VS. NORMAL COMMANDS**
+
+This guide explains when to use the `start` command versus simply typing a command directly in the Windows Command Prompt.
+
+---
+
+#### **1. USE `START` WHEN YOU WANT TO:**
+
+The `start` command is an **internal CMD command** that launches programs, opens files, or initiates processes, often in a new window or as a separate background process. It's ideal for:
+
+* **Opening files with their default application:**
+    * `start "" "document.pdf"` (Opens PDF in default PDF viewer)
+    * `start "" "image.jpg"` (Opens JPG in default image viewer)
+    * `start "" "video.mp4"` (Plays MP4 in default video player)
+    * `start "" "C:\Users\YourUser\Reports\ProjectPlan.docx"` (Opens Word document)
+
+* **Launching GUI applications without waiting for them (non-blocking):**
+    * `start "" notepad.exe` (Opens Notepad)
+    * `start "" mspaint.exe` (Opens MS Paint)
+    * `start "" chrome.exe "https://www.google.com"` (Opens Chrome to Google)
+    * `start "" "C:\Program Files\AppFolder\MyGUIApp.exe"` (Opens a specific application)
+
+* **Opening new Command Prompt windows:**
+    * `start cmd` (Opens a new CMD window)
+    * `start "New Window Title" cmd /k "dir"` (Opens new CMD, sets title, runs `dir`, keeps window open)
+
+* **Opening web links (URLs):**
+    * `start "" "https://www.openai.com"` (Opens the URL in your default browser)
+    * `start "" "mailto:someone@example.com"` (Opens default email client with new message)
+
+* **Running a command and immediately returning control to the current CMD window (running in background):**
+    * `start /B my_batch_script.bat` (Runs `my_batch_script.bat` without a new CMD window, but asynchronously)
+    * `start /MIN "" notepad.exe` (Launches Notepad minimized)
+
+---
+
+#### **2. USE NORMAL COMMANDS (DIRECT EXECUTION) WHEN YOU WANT TO:**
+
+Simply type the command directly when it's an **external executable (like `.exe`, `.bat`, `.ps1` for PowerShell scripts) or an internal CMD command** that performs an action *within* the current Command Prompt window. The CMD window will typically wait for these commands to complete before allowing new input.
+
+* **Performing common system operations:**
+    * `dir` (Lists directory contents)
+    * `cd C:\MyFolder` (Changes directory)
+    * `mkdir NewFolder` (Creates a new folder)
+    * `copy file.txt new_file.txt` (Copies a file)
+    * `del old_file.txt` (Deletes a file)
+    * `ipconfig` (Displays network configuration)
+    * `ping google.com` (Sends network requests)
+    * `echo Hello World` (Prints text to the console)
+
+* **Running console-based utilities or scripts that operate on the command line:**
+    * `python my_script.py` (Runs a Python script if Python is in PATH)
+    * `node my_app.js` (Runs a Node.js application if Node.js is in PATH)
+    * `my_script.bat` (Executes a batch file in the current window)
+    * `powershell -Command "Get-Process"` (Runs a PowerShell command)
+
+* **Executing an executable whose output you need in the current console:**
+    * `my_cli_tool --version` (Prints version info to current console)
+    * `where chrome.exe` (Shows location of `chrome.exe` in current console)
+
+---
+**KEY RULE:**
+* **`START` for opening, launching, or backgrounding.**
+* **Direct Command for executing *within* the current window, especially for console tools and scripts that yield output back to you.**

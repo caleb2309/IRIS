@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    /* Language and Platform */
+    "target": "es2022",                                  /* Specify ECMAScript target version. */
+    "lib": ["es2022"],                                  /* Specify a set of bundled library declaration files. */
+    "module": "Node16",                                 /* Specify what module code is generated for Node.js ES Modules. */
+    "rootDir": "./",                                 /* Specify the root folder within your source files. */
+    "outDir": "./dist",                                 /* Specify an output folder for all emitted files. */
+    "esModuleInterop": true,                            /* Emit additional JavaScript to ease support for importing CommonJS modules. */
+    "forceConsistentCasingInFileNames": true,           /* Ensure that casing is correct in imports. */
+
+    /* Type Checking */
+    "strict": true,                                     /* Enable all strict type-checking options. */
+    "noImplicitAny": true,                              /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+    "skipLibCheck": true,                               /* Skip type checking all .d.ts files. */
+
+    /* Module Resolution */
+    "moduleResolution": "Node16",                       /* Specify how modules are resolved for Node.js ES Modules. */
+    "baseUrl": "./",                                    /* Specify the base directory to resolve non-relative module names. */
+    "paths": {                                          /* Specify a set of entries that re-map imports to lookup locations. */
+      "*": ["node_modules/*"]
+    },
+
+    /* Source Maps */
+    "sourceMap": true,                                  /* Create source map files for emitted JavaScript files. */
+
+    /* Advanced Options */
+    "resolveJsonModule": true,                          /* Enable importing .json files. */
+    "allowJs": true                                     /* Allow JavaScript files to be compiled. */
+  },
+  "include": [
+    "src/**/*.ts",                                      /* Include all TypeScript files in the src directory and its subdirectories. */
+    "src/**/*.js",                                      /* Include all JavaScript files in the src directory and its subdirectories. */
+    "server.ts"                                         /* Include your main server file directly. */
+  ],
+  "exclude": [
+    "node_modules",                                     /* Exclude the node_modules directory. */
+    "**/*.spec.ts",                                     /* Exclude test files. */
+    "dist"                                              /* Exclude the output directory. */
+  ]
+}

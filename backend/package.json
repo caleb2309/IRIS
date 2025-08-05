@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for the IRIS Virtual Assistant",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec \"node --loader ts-node/esm\" server.ts",
+    "build": "tsc",
+    "start": "npx tsx server.ts",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "virtual-assistant",
+    "iris",
+    "backend",
+    "node",
+    "express",
+    "typescript",
+    "es-modules"
+  ],
+  "author": "Your Name/Organization",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.0.0-beta.1",
+    "node-wav-player": "^1.0.0",
+    "speaker": "^0.5.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "nodemon": "^3.1.4",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.5.3"
+  }
+}
