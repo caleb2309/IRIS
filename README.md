@@ -6,6 +6,8 @@
 
 IRIS aims to provide a functional bridge between your voice commands and direct computer actions, making daily interactions a bit smoother.
 
+![IRIS UI](frontend/IRIS_PIC.PNG "IRIS UI")
+
 ## 💡 How It Works
 
 IRIS operates through a clear, sequential flow:
